@@ -8,7 +8,7 @@ import { MdOutlineShoppingCart } from "react-icons/md";
 import classes from "./Header.module.css";
 import LowerHead from "./LowerHead";
 import { DataContext } from "../DataProvider/DataProvider";
-import { auth } from "../../utility/firebase";
+import { auth } from "../../Utility/firebase.js";
 
 function Header() {
   const [{ user, basket }, dispatch] = useContext(DataContext);
@@ -48,7 +48,6 @@ function Header() {
           <div className={classes.flag}>
             <img src={USAflag} alt="" />
             <p>EN </p>
-            
           </div>
           <div className={classes.cart_side}>
             <Link to={!user && "/auth"}>
