@@ -1,18 +1,18 @@
 import React, { useContext, useState } from "react";
 import LayOut from "../../component/LayOut/LayOut";
-import classes from "./payment.module.css";
+import classes from "./Payment.module.css";
 import { DataContext } from "../../component/DataProvider/DataProvider";
 import ProductCard from "../../component/Product/ProductCard";
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 import CurrencyFormat from "../../component/CurrencyFormat.jsx/CurrencyFormat";
 import { axiosInstance } from "../../Api/axios";
 import { ClipLoader } from "react-spinners";
-import { db } from "../../utility/firebase";
+import { db } from "../../Utility/firebase.js";
 import { useNavigate } from "react-router-dom";
 import { Type } from "../../Utility/action.type";
 
 function Payment() {
-  const [{ user, basket },dispatch] = useContext(DataContext);
+  const [{ user, basket }, dispatch] = useContext(DataContext);
   // console.log(user);
 
   // total itmes
@@ -72,10 +72,10 @@ function Payment() {
 
       // empty the basket
 
-      dispatch({ type: Type.EMPTY_BASKET});
+      dispatch({ type: Type.EMPTY_BASKET });
 
       setProcessing(false);
-      navigate("/orders",{state:{msg:"you have placed new orders"}})
+      navigate("/orders", { state: { msg: "you have placed new orders" } });
     } catch (error) {
       console.log("error");
       setProcessing(false);
