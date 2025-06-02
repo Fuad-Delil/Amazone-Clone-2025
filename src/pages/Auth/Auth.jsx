@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import amazone_logo from "../../assets/Amazon_logo.svg.png";
 import classes from "./Auth.module.css";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import { auth } from "../../utility/firebase";
+import { auth } from "../../Utility/firebase.js";
 import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
@@ -74,19 +74,18 @@ function Auth() {
 
       <div className={classes.login__container}>
         <h1>Sign in</h1>
-        {
-          navStateData?.state?.msg && (
-            <small style={{
-              padding:"5px",
-              textAlign:"center",
-              color:"red",
-              fontWeight:"bold",
-            }}>
-                {navStateData?.state?.msg}
-            </small>
-          )
-
-        }
+        {navStateData?.state?.msg && (
+          <small
+            style={{
+              padding: "5px",
+              textAlign: "center",
+              color: "red",
+              fontWeight: "bold",
+            }}
+          >
+            {navStateData?.state?.msg}
+          </small>
+        )}
         <form action="">
           <div>
             <label htmlFor="email"> Email </label>
