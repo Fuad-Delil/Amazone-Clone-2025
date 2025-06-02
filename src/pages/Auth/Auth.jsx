@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import amazone_logo from "../../assets/Amazon_logo.svg.png";
 import classes from "./Auth.module.css";
 import { Link, useNavigate, useLocation } from "react-router-dom";
-import { auth } from "../../Utility/firebase.js.js";
+import { auth } from "../../Utility/firebase.js";
 import {
   signInWithEmailAndPassword,
   createUserWithEmailAndPassword,
